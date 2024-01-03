@@ -34,9 +34,9 @@ const curHr = today.getHours();
 async function enviarMensagemDiaria() {
     const canal = await client.channels.fetch(channelId);
 
-    if (curHr < 12) {
+    if (curHr < 15) {
       canal.send(`Bom dia grupo, ${mensagens[Math.floor(Math.random() * mensagens.length)]}`);
-    } else if (curHr < 18) {
+    } else if (curHr < 21) {
       canal.send(`Boa tarde comunidade, ${mensagens[Math.floor(Math.random() * mensagens.length)]}`);
     } else {
       canal.send(`Boa noite PTFERs, ${mensagens[Math.floor(Math.random() * mensagens.length)]}`);
