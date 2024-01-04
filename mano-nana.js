@@ -28,15 +28,16 @@ const mensagens = [
   'eu te amo Marquin',
 ]
 
-const today = new Date();
-const curHr = today.getHours();
-
 async function enviarMensagemDiaria() {
+    const today = new Date();
+    const curHr = today.getHours();
     const canal = await client.channels.fetch(channelId);
 
-    if (curHr < 15) {
+    console.log(curHr);
+
+    if (curHr < 12) {
       canal.send(`Bom dia grupo, ${mensagens[Math.floor(Math.random() * mensagens.length)]}`);
-    } else if (curHr < 21) {
+    } else if (curHr < 18) {
       canal.send(`Boa tarde comunidade, ${mensagens[Math.floor(Math.random() * mensagens.length)]}`);
     } else {
       canal.send(`Boa noite PTFERs, ${mensagens[Math.floor(Math.random() * mensagens.length)]}`);
